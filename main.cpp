@@ -1,32 +1,94 @@
 #include <iostream>
 #include "date.h"
-#include <time.h>
 #include "Markup.h"
+#include "User.h"
+#include "Users.h"
+#include <conio.h>
+#include "FileUsers.h"
 
 using namespace std;
 
+void mainMenu(Users &listU);
+
 int main()
 {
-    time_t currentTime;
-    time (&currentTime);
-    tm *currentDate;
-    currentDate=localtime(&currentTime);
-    cout<<"Dzis mamy: "<<1900+currentDate->tm_year<<"-"<<1+currentDate->tm_mon<<"-"<<currentDate->tm_mday<<endl;
+    Users listU;
 
-    Date d1,d2;
-    d1.setDate();
-    d2.setDate();
-    if(d1.getDate()>d2.getDate()) cout<<"pierwsza data jest pozniejsza";
-    if(d1.getDate()<d2.getDate()) cout<<"druga data jest pozniejsza";
-    if(d1.getDate()==d2.getDate()) cout<<"daty sa takie same";
+    char option='0';
 
-    CMarkup xml;
-    //xml.AddElem("date",d1.getDate());
-    //xml.Save("data.xml");
-    xml.Load("data.xml");
-    xml.FindElem();
-    cout<<xml.GetData();
-
+    while(option!='3')
+    {
+        system("cls");
+        cout<<"Bilans finansow\n1. Logowanie\n2. Rejestracja\n3. Zamknij program\n";
+        option=getch();
+        switch (option)
+        {
+        case '1':
+        {
+            listU.setUserID(listU.logging());
+            if(listU.getUserID()!=0)
+            {
+                //wczytaj dane z pliku
+                mainMenu(listU);
+            }
+        }
+        break;
+        case '2':
+        {
+            FileUsers *p_fileUsers=new FileUsers;
+            p_fileUsers->addUser(listU.addUser(),listU.getLastUserID());
+            delete p_fileUsers;
+        }
+        break;
+        case '3':
+            break;
+        default:
+            cout<<"Nie ma takiej opcji\n";
+            system("pause");
+            break;
+        }
+    }
 
     return 0;
+}
+
+void mainMenu(Users &listU)
+{
+    char opcja='0';
+
+    while(opcja!='7')
+    {
+        system("cls");
+        cout<<"Bilans finansow - menu glowne\n1. Zmiana hasla\n7. Wyloguj sie\n";
+        opcja=getch();
+        switch (opcja)
+        {
+        case '1':
+        {
+            FileUsers *p_fileUsers=new FileUsers;
+            p_fileUsers->changePassword(listU.changePassword(),listU.getUserID());
+            cout<<"Przeprowadzono zmiane hasla"<<endl;
+            system("pause");
+            delete p_fileUsers;
+        }
+        break;
+        case '2':
+            break;
+        case '3':
+            break;
+        case '4':
+            break;
+        case '5':
+            break;
+        case '6':
+            break;
+        case '7':
+            break;
+
+        default:
+            cout<<"Nie ma takiej opcji\n";
+            system("pause");
+            break;
+        }
+    }
 }
