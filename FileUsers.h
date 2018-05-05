@@ -8,6 +8,6 @@ class FileUsers
 {
 
 public:
-    void addUser(User newUser, int lastUserID);
+    void addUser(User newUser);
     void changePassword (string newPassword, int userID);
 };

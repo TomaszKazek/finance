@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include <fstream>
 #include <cstdlib>
 #include <sstream>
 #include "Users.h"
@@ -11,12 +10,11 @@ using namespace std;
 Users::Users()
 {
     usersList.clear();
-    fstream existingUsers;
     string buffer;
     lastUserID=0;
 
     CMarkup xml;
-    xml.Load("data.xml");
+    xml.Load("Users.xml");
     xml.FindElem();
     xml.IntoElem();
     while(xml.FindElem("User"))

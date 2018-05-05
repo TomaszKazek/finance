@@ -4,12 +4,10 @@
 
 using namespace std;
 
-void FileUsers::addUser(User newUser, int lastUserID)
+void FileUsers::addUser(User newUser)
 {
-    string buffer;
-
     CMarkup xml;
-    xml.Load("data.xml");
+    xml.Load("Users.xml");
     if(!xml.FindElem("UsersList"))
     {
         xml.AddElem("UsersList");
@@ -25,7 +23,7 @@ void FileUsers::addUser(User newUser, int lastUserID)
     xml.AddElem("Password",newUser.getPassword());
     xml.OutOfElem();
 
-    xml.Save("data.xml");
+    xml.Save("Users.xml");
 }
 
 void FileUsers::changePassword (string newPassword, int userID)
@@ -33,7 +31,7 @@ void FileUsers::changePassword (string newPassword, int userID)
     string buffer;
 
     CMarkup xml;
-    xml.Load("data.xml");
+    xml.Load("Users.xml");
     xml.FindElem();
     xml.IntoElem();
 
@@ -47,7 +45,7 @@ void FileUsers::changePassword (string newPassword, int userID)
         {
             xml.FindElem("Password");
             xml.SetData(newPassword);
-            xml.Save("data.xml");
+            xml.Save("Users.xml");
             break;
         }
         xml.OutOfElem();

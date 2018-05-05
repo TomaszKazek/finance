@@ -1,0 +1,72 @@
+<Incomes>
+<Income>
+<ID>1</ID>
+<UserID>1</UserID>
+<Date>2001-01-01</Date>
+<Category>pensja</Category>
+<Value>5000.23</Value>
+</Income>
+<Income>
+<ID>2</ID>
+<UserID>1</UserID>
+<Date>2002-02-02</Date>
+<Category>odszkodowanie</Category>
+<Value>1234.56</Value>
+</Income>
+<Income>
+<ID>3</ID>
+<UserID>1</UserID>
+<Date>2003-03-03</Date>
+<Category>odsetki</Category>
+<Value>12.21</Value>
+</Income>
+<Income>
+<ID>4</ID>
+<UserID>2</UserID>
+<Date>2004-04-04</Date>
+<Category>pensja</Category>
+<Value>2015.26</Value>
+</Income>
+<Income>
+<ID>5</ID>
+<UserID>2</UserID>
+<Date>2005-05-05</Date>
+<Category>zwrot podatku</Category>
+<Value>56.23</Value>
+</Income>
+<Income>
+<ID>6</ID>
+<UserID>2</UserID>
+<Date>2008-09-30</Date>
+<Category>sprzedaz wihastra</Category>
+<Value>346.78</Value>
+</Income>
+<Income>
+<ID>7</ID>
+<UserID>1</UserID>
+<Date>2008-08-08</Date>
+<Category>kradziez torebki</Category>
+<Value>303.24</Value>
+</Income>
+<Income>
+<ID>8</ID>
+<UserID>1</UserID>
+<Date>2018-05-04</Date>
+<Category>dodatkowe zlecenie</Category>
+<Value>302.65</Value>
+</Income>
+<Income>
+<ID>9</ID>
+<UserID>1</UserID>
+<Date>2018-04-16</Date>
+<Category>wygrana w pokera</Category>
+<Value>40000</Value>
+</Income>
+<Income>
+<ID>10</ID>
+<UserID>2</UserID>
+<Date>2018-05-04</Date>
+<Category>wygrana w lotka</Category>
+<Value>1e+006</Value>
+</Income>
+</Incomes>
