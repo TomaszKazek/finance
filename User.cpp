@@ -11,13 +11,13 @@ void User::setName(string n)
 {
     name=n;
 }
-void User::setLastName(string l)
+void User::setLastName(string lastN)
 {
-    lastName=l;
+    lastName=lastN;
 }
-void User::setLogin(string l)
+void User::setLogin(string log)
 {
-    login=l;
+    login=log;
 }
 void User::setPassword(string p)
 {

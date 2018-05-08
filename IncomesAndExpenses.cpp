@@ -65,17 +65,23 @@ Record IncomesAndExpenses::addRecord (int userID)
     p_date->setDate();
     newRecord.setDate(*p_date);
 
+    do
+    {
     cout<<"Podaj kategorie: ";
     cin.sync();
     getline(cin, buffer);
     newRecord.setCategory(buffer);
+    }while (buffer=="");
 
+    do
+    {
     cout<<"Podaj kwote: ";
     cin.sync();
     getline(cin, buffer);
     if (buffer.find(",")!=-1)
     buffer.replace(buffer.find(","),1,".");
     newRecord.setValue(buffer);
+    }while (buffer==""||newRecord.getValue()<=0);
 
     recordsList.push_back(newRecord);
     system("pause");
