@@ -119,6 +119,8 @@ void Date::setDate()
                 isDateCorrect=true;
                 cout<<"podaj date w formacie yyyy-mm-dd: ";
                 getline(cin,buffer);
+                ss.str("");
+                ss.clear();
                 ss<<buffer;
 
                 getline(ss,yearString,'-');
@@ -149,6 +151,7 @@ void Date::setDate()
                 }
                 else
                     isDateCorrect=false;
+
             }
             while(isDateCorrect==false);
 
